@@ -9,6 +9,13 @@ Se suele utilizar a la hora de validar formularios, ya sea que el email tenga ci
 # Sintaxis #
 `/patron/letraBandera`
 
+## Formas de escribir Expresiones Regulares ##
+
+1. ``const regEx = /lorem/gi;``
+2. ``const regEx = new RegExp('lorem' , 'gi');``
+3. ``const regEx = new RegExp('/lorem/' , 'gi');`` 
+
+Cabe destacar que la más utilizada es el caso 1.
 
 # Banderas #
 Las expresiones regulares pueden usar banderas que afectan la búsqueda. Podemos encontrar 6 banderas en JavaScript:
