@@ -131,3 +131,46 @@ Un ejemplo sería: ``(lorem|amet)``
 
 En este caso, estamos seleccionando tanto la palabra "lorem" como la palabra "amet".
 
+
+# Delimitadores #
+- ˆ (shif + altGr + l) Antes de este símbolo, no puede haber nada.
+-  $ Después de este símbolo no puede haber nada.
+
+Ejemplo:
+
+``ˆhola$``
+
+## Llaves: ##
+Lo que está antes tiene que aparecer la cantidad exacta de veces. Hay tres combinaciones posibles.
+### ###
+- {n} Se tiene que repetir "n" veces.
+- {n,m} Se tiene que repetir entre "n" y "m" veces, ambas incluidas.
+- {n,} Se tiene que repetir como mínimo "n" veces y sin máximo.
+
+Ejemplo:
+
+``ˆ[a-zA-Z]{1,3}@{1}$``
+
+
+## Asterisco: ##
+Lo que está antes del asterisco puede estar, puede no estar y se puede repetir.
+
+Ejemplo:
+
+``.*@.*\..*``
+
+
+## Interrogación ##
+Lo que está antes de la interrogación puede no estar, pero si está solo puede aparecer una vez. 
+
+Ejemplo:
+
+``ˆ[œ]?$``
+
+
+## Operador más; ##
+Lo que está antes del + tiene que estar una vez como mínimo.
+
+Ejemplo:
+
+``A-[0-9]+``
