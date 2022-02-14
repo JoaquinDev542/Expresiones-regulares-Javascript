@@ -3,7 +3,9 @@ Son una secuencia de caracteres que forma un patrón de búsqueda, principalment
 
 Se suele utilizar a la hora de validar formularios, ya sea que el email tenga ciertas cosas, que la contraseña tenga ciertos items, etc.
 
-[Página para hacer test sobre las expresiones regulares] (https://regex101.com/)
+[Página para hacer test sobre las expresiones Regulares] (https://regex101.com/)
+
+[Página para generar Expresiones Regulares] (https://ihateregex.io/?q=)
 
 
 # Sintaxis #
@@ -11,11 +13,12 @@ Se suele utilizar a la hora de validar formularios, ya sea que el email tenga ci
 
 ## Formas de escribir Expresiones Regulares ##
 
-1. ``const regEx = /lorem/gi;``
-2. ``const regEx = new RegExp('lorem' , 'gi');``
-3. ``const regEx = new RegExp('/lorem/' , 'gi');`` 
+1. const regEx = /lorem/gi;
+2. const regEx = new RegExp('lorem' , 'gi');
+3. const regEx = new RegExp('/lorem/' , 'gi');
 
 Cabe destacar que la más utilizada es el caso 1.
+
 
 # Banderas #
 Las expresiones regulares pueden usar banderas que afectan la búsqueda. Podemos encontrar 6 banderas en JavaScript:
@@ -132,19 +135,26 @@ Un ejemplo sería: ``(lorem|amet)``
 En este caso, estamos seleccionando tanto la palabra "lorem" como la palabra "amet".
 
 
-# Delimitadores #
-- ˆ (shif + altGr + l) Antes de este símbolo, no puede haber nada.
+# Operador de Delimitadores #
+Estos son los más utilizados, aunque hay más.
+
+- ^ (Acento Circunflejo) Antes de este símbolo, no puede haber nada.
 -  $ Después de este símbolo no puede haber nada.
 
 Ejemplo:
 
-``ˆhola$``
+``^hola$``
+
+Es decir, encontrará match solo cuando el mensaje solo sea "hola", ya que DELIMITAMOS el contenido que tiene que haber.
+
+ 
+# Operador de Cantidad#
 
 ## Llaves: ##
 Lo que está antes tiene que aparecer la cantidad exacta de veces. Hay tres combinaciones posibles.
-### ###
+
 - {n} Se tiene que repetir "n" veces.
-- {n,m} Se tiene que repetir entre "n" y "m" veces, ambas incluidas.
+- {n,m} Se tiene que repetir entre "n" y "m" veces, ambas incluidas. Es decir, el mínimo y el máximo.
 - {n,} Se tiene que repetir como mínimo "n" veces y sin máximo.
 
 Ejemplo:
@@ -165,12 +175,13 @@ Lo que está antes de la interrogación puede no estar, pero si está solo puede
 
 Ejemplo:
 
-``ˆ[œ]?$``
+``ˆ[ae]?$``
 
 
-## Operador más; ##
+## Operador más (+) ##
 Lo que está antes del + tiene que estar una vez como mínimo.
 
 Ejemplo:
 
 ``A-[0-9]+``
+
