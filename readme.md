@@ -159,11 +159,11 @@ Lo que está antes tiene que aparecer la cantidad exacta de veces. Hay tres comb
 
 Ejemplo:
 
-``ˆ[a-zA-Z]{1,3}@{1}$``
+``^[a-zA-Z]{1,3}@{1}$``
 
 
 ## Asterisco: ##
-Lo que está antes del asterisco puede estar, puede no estar y se puede repetir.
+Lo que está antes del asterisco puede estar, puede  no estar y se puede repetir.
 
 Ejemplo:
 
@@ -175,7 +175,7 @@ Lo que está antes de la interrogación puede no estar, pero si está solo puede
 
 Ejemplo:
 
-``ˆ[ae]?$``
+``^[ae]?$``
 
 
 ## Operador más (+) ##
@@ -184,4 +184,54 @@ Lo que está antes del + tiene que estar una vez como mínimo.
 Ejemplo:
 
 ``A-[0-9]+``
+
+
+# Caracteres #
+
+## \s: ##
+Coincide con un caracter de espacio, entre ellos incluidos espacio, tab, salto de página, salto de línea y retorno de carro.
+
+Ejemplo:
+
+``^[a-zA-Z]+\s[a-zA-Z]+$``
+
+
+## \S: ## 
+Coincide con todo menos caracteres de espacio.
+
+Ejemplo:
+
+``^\S{5}$``
+
+
+## \d ## 
+Coincide con un caracter de número. Equivalente a [0-9]
+
+Ejemplo:
+
+``^\d{5}$``
+
+
+## \D ##
+Coincide con cualquier caracter no numérico. Equivalente a [^0-9]
+
+Ejemplo:
+
+``^\D{5}$``
+
+
+## \w ##
+Coincide con cualquier caracter alfanumérico, incluyendo el guión bajo. Equivalente a [A-Za-z0-9_] 
+
+Ejemplo:
+
+``^\w+@$``
+
+
+## \W ##
+Coincide con todo menos caracteres de palabras.
+
+Ejemplo:
+
+``^\W+$``
 
