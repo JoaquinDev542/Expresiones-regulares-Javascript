@@ -31,11 +31,11 @@ Las expresiones regulares pueden usar banderas que afectan la búsqueda. Podemos
 - y
 
 
-### i ###
+### i (ignore) ###
 Con esta bandera, la búsqueda no distingue entre mayúsculas y minúsculas. 
 
 
-### g ###
+### g (global) ###
 Con esta bandera, la búsqueda encuentra todas las coincidencias, sin ella, solo se devuelve la primera coincidencia.
 
 
@@ -163,7 +163,7 @@ Ejemplo:
 
 
 ## Asterisco: ##
-Lo que está antes del asterisco puede estar, puede  no estar y se puede repetir.
+Lo que está antes del asterisco puede estar, puede no estar y se puede repetir.
 
 Ejemplo:
 
@@ -179,7 +179,7 @@ Ejemplo:
 
 
 ## Operador más (+) ##
-Lo que está antes del + tiene que estar una vez como mínimo.
+Lo que está antes del + tiene que estar una vez como mínimo, no tiene límite.
 
 Ejemplo:
 
@@ -187,6 +187,7 @@ Ejemplo:
 
 
 # Caracteres #
+Nos sirve para ahorrar código, ya que funciona como si una letra agrupara diferentes caracteres, dependiendo cada comodín (\s \d , etc).
 
 ## \s: ##
 Coincide con un caracter de espacio, entre ellos incluidos espacio, tab, salto de página, salto de línea y retorno de carro.
@@ -204,7 +205,7 @@ Ejemplo:
 ``^\S{5}$``
 
 
-## \d ## 
+## \d (digito) ## 
 Coincide con un caracter de número. Equivalente a [0-9]
 
 Ejemplo:
@@ -235,3 +236,64 @@ Ejemplo:
 
 ``^\W+$``
 
+
+# Métodos que usan Expresiones Regulares #
+
+## test() ##
+Prueba una coincidencia en una cadena. El valor devuelto será **true** o **false**.
+
+Su sintaxis es:
+
+``regexObj.test(cadena);``
+
+
+## exec() ##
+Ejecuta una búsqueda por una coincidencia en una cadena. El valor devuelto será **un arreglo de información o null en una discrepancia**.
+
+Su sintaxis es:
+
+``regexObj.exec(cadena);``
+
+
+## match() ##
+Devuelve un **arreglo que contiene toda las coincidencias, incluidos los grupos de captura, o null si no se encuentra ninguna coincidencia**.
+
+Su sintaxis es:
+
+``regexObj.match(expresionRegular);``
+
+* expresionRegular: Un objeto de expresión regular. 
+
+
+## matchAll() ##
+Devuelve **un iterador que contiene todas las coincidencias, incluido los grupos de caputura.**
+
+Su sintaxis es:
+
+``regexObj.matchAll(expresionRegular);``
+
+
+## search() ##
+Prueba una coincidencia en una cadena. El valor devuelto será **el índice de la coincidencia o -1 si la busqueda falla.**
+
+Su sintaxis es:
+
+``regexObj.search(expresionRegular);``
+
+
+## replace() ##
+Ejecuta una búsqueda por una coincidencia en una cadena y reemplaza la subcadena coincidente con una subcadena de reemplazo.
+
+## replaceAll() ##
+Ejecuta una búsqueda de todas las coincidencias en una cadena y reemplaza las subcadenas coincidentes con una subcadena de reemplazo.
+
+## split() ##
+Utiliza una expresión regular o una cadena fija para dividir una cadena en un arreglo de subcadenas.
+
+Su sintaxis es:
+
+``regexObj.split([separador] , [limite]);``
+
+* separador: Especifica el carácter a usar para la separación de la cadena. Es tratado como una cadena o como una expresión regular. Si se **OMITE** el array devuelto contendrá sólo un elemento con la cadena completa.
+
+* limite: Opcional. Entero que especifica un límite sobre el número de divisiones a realizar.
