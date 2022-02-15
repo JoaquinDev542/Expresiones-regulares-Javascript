@@ -148,7 +148,7 @@ Ejemplo:
 Es decir, encontrará match solo cuando el mensaje solo sea "hola", ya que DELIMITAMOS el contenido que tiene que haber.
 
  
-# Operador de Cantidad#
+# Operador de Cantidad #
 
 ## Llaves: ##
 Lo que está antes tiene que aparecer la cantidad exacta de veces. Hay tres combinaciones posibles.
